@@ -1,6 +1,6 @@
 {
-  "name": "io.oreon.thirty-seconds",
-  "version": "0.0.0",
+  "name": "io.oreon.thirty-seconds-client",
+  "version": "0.0.1",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -17,10 +17,5 @@
     "typescript": "^4.1.3",
     "vite": "^2.0.1",
     "sass": "^1.32.8"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
   }
 }

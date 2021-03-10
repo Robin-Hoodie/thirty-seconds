@@ -1,26 +1,30 @@
-# Vue 3 + Typescript + Vite
+# Thirty Seconds
 
-This template should help get you started developing with Vue 3 and Typescript in Vite.
+## Prerequisites
 
-## Recommended IDE Setup
+- Node (tested with v15.0.1)
+- Yarn (tested with v1.22.5)
 
-[VSCode](https://code.visualstudio.com/) + [Vetur](https://marketplace.visualstudio.com/items?itemName=octref.vetur). Make sure to enable `vetur.experimental.templateInterpolationService` in settings!
+## Setup
 
-### If Using `<script setup>`
+- Clone repo
+- Run `yarn`
 
-[`<script setup>`](https://github.com/vuejs/rfcs/pull/227) is a feature that is currently in RFC stage. To get proper IDE support for the syntax, use [Volar](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar) instead of Vetur (and disable Vetur).
+## Scripts
 
-## Type Support For `.vue` Imports in TS
+We generally want to avoid having to `cd` into any project directories and be able to run all scripts from the root.
+This includes things like:
 
-Since TypeScript cannot handle type information for `.vue` imports, they are shimmed to be a generic Vue component type by default. In most cases this is fine if you don't really care about component prop types outside of templates. However, if you wish to get actual prop types in `.vue` imports (for example to get props validation when using manual `h(...)` calls), you can use the following:
+- Running a dev server
+- Running a local Netlify instance
+- Linting
+- Typechecking
+- Producing a build
+- ...
 
-### If Using Volar
+An example of this would be:
 
-Run `Volar: Switch TS Plugin on/off` from VSCode command palette.
+`client:dev` this will run a dev server for the client project
 
-### If Using Vetur
-
-1. Install and add `@vuedx/typescript-plugin-vue` to the [plugins section](https://www.typescriptlang.org/tsconfig#plugins) in `tsconfig.json`
-2. Delete `src/shims-vue.d.ts` as it is no longer needed to provide module info to Typescript
-3. Open `src/main.ts` in VSCode
-4. Open the VSCode command palette 5. Search and run "Select TypeScript version" -> "Use workspace version"
+Generally all project specific scripts should be prefixed with either `client:` or `server:`
+Scripts that target all projects should be prefixed with `all:`

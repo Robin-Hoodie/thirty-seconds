@@ -6,8 +6,8 @@
 
 <script>
 export default {
-  name: "TheContainer"
-}
+  name: "TheContainer",
+};
 </script>
 
 <style>

@@ -1,6 +1,10 @@
 <template>
   <TheContainer>
-    <Card :words="words" :time-ran-out="timeRanOut" @animation-completed="onAnimationCompleted" />
+    <Card
+      :words="words"
+      :time-ran-out="timeRanOut"
+      @animation-completed="onAnimationCompleted"
+    />
     <BaseButton type="button" @click="refreshRandomWords">
       Next Card!
     </BaseButton>
@@ -22,24 +26,24 @@ export default defineComponent({
     BaseButton,
     TheContainer,
     Card,
-    Timer
+    Timer,
   },
-  setup () {
+  setup() {
     const startTimer = ref(false);
     const timeRanOut = ref(false);
     const words = ref(getBatchOfWordsRandom());
     const refreshRandomWords = () => {
       words.value = getBatchOfWordsRandom();
-    }
+    };
     return {
       startTimer,
       timeRanOut,
       words,
       onAnimationCompleted: () => (startTimer.value = true),
       onTimeRanOut: () => (timeRanOut.value = true),
-      refreshRandomWords
-    }
-  }
+      refreshRandomWords,
+    };
+  },
 });
 </script>
 
@@ -50,7 +54,7 @@ export default defineComponent({
 :root {
   /* Split complementary at https://www.sessions.edu/color-calculator/ */
   --color-primary: #f7d539;
-  --color-accent: #5036AA;
+  --color-accent: #5036aa;
   --color-gray--dark: #46453f;
   --color-gray--light: #fafafa;
   --color-white: #fff;
@@ -58,5 +62,3 @@ export default defineComponent({
   background-color: var(--color-gray--light);
 }
 </style>
-
-
