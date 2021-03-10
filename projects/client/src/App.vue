@@ -60,5 +60,6 @@ export default defineComponent({
   --color-white: #fff;
   color: var(--color-gray--dark);
   background-color: var(--color-gray--light);
+  box-sizing: border-box;
 }
 </style>

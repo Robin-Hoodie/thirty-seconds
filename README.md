@@ -8,7 +8,15 @@
 ## Setup
 
 - Clone repo
+- Get `NPM_TOKEN` for authenticating with GSAP's private registry. The value for this can be gotten from [Robin-Hoodie](mailto:robin@oreon.io)
+- Run `export NPM_TOKEN=token_goes_here`
 - Run `yarn`
+
+### NPM_TOKEN
+
+The reason this is necessary is because we're using an NPM package from a private registry.
+For security reasons this token is not included in the repository.
+See [this video](https://www.youtube.com/watch?v=30CivTsqqMY) for more details
 
 ## Scripts
 

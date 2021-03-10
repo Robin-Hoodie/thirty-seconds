@@ -1,0 +1,31 @@
+name: Format
+on: pull_request
+jobs:
+  format-check:
+    name: Verify code formatting is done
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Install Node
+        uses: actions/setup-node@v2
+      - name: Get yarn cache directory path
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn cache dir)"
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - name: Restore cache
+        uses: actions/cache@v2
+        with:
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn
+      - name: Install Dependencies
+        run: yarn install --immutable --skip-builds
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - name: Run Prettier
+        run: yarn prettier --check .
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

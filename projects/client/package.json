@@ -1,21 +1,23 @@
 {
-  "name": "io.oreon.thirty-seconds-client",
+  "name": "@oreon/thirty-seconds-client",
   "version": "0.0.1",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "serve": "vite preview"
+    "serve": "vite preview",
+    "typecheck": "vue-tsc --noEmit"
   },
   "dependencies": {
-    "gsap": "npm:@gsap/shockingly",
+    "gsap": "npm:@gsap/shockingly@*",
     "normalize.css": "^8.0.1",
-    "vue": "^3.0.5"
+    "vue": "^3.0.7"
   },
   "devDependencies": {
-    "@vitejs/plugin-vue": "^1.1.4",
-    "@vue/compiler-sfc": "^3.0.5",
-    "typescript": "^4.1.3",
-    "vite": "^2.0.1",
-    "sass": "^1.32.8"
+    "@vitejs/plugin-vue": "^1.1.5",
+    "@vue/compiler-sfc": "^3.0.7",
+    "sass": "^1.32.8",
+    "typescript": "^4.2.3",
+    "vite": "^2.1.0",
+    "vue-tsc": "^0.0.8"
   }
 }
